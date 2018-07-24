@@ -1,7 +1,7 @@
 ﻿@model CommerceV3.Models.Product
 
 @{
-    ViewData["Title"] = "Düzenle";
+    ViewData["Title"] = "Ürün Düzenle";
 }
 
 
@@ -23,7 +23,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
+                <textarea asp-for="Description" class="form-control"></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -42,21 +42,21 @@
                 <span asp-validation-for="Quantity" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <div class="checkbox">
+                <div>
                     <label>
                         <input asp-for="IsInStock" /> @Html.DisplayNameFor(model => model.IsInStock)
                     </label>
                 </div>
             </div>
             <div class="form-group">
-                <div class="checkbox">
+                <div>
                     <label>
                         <input asp-for="IsPublished" /> @Html.DisplayNameFor(model => model.IsPublished)
                     </label>
                 </div>
             </div>
             <div class="form-group">
-                <div class="checkbox">
+                <div>
                     <label>
                         <input asp-for="IsNew" /> @Html.DisplayNameFor(model => model.IsNew)
                     </label>
@@ -87,26 +87,12 @@
                 <select asp-for="BrandId" class="form-control" asp-items="ViewBag.BrandId"></select>
                 <span asp-validation-for="BrandId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="CreatedBy" class="control-label"></label>
-                <input asp-for="CreatedBy" class="form-control" />
-                <span asp-validation-for="CreatedBy" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CreateDate" class="control-label"></label>
-                <input asp-for="CreateDate" class="form-control" />
-                <span asp-validation-for="CreateDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UpdatedBy" class="control-label"></label>
-                <input asp-for="UpdatedBy" class="form-control" />
-                <span asp-validation-for="UpdatedBy" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UpdateDate" class="control-label"></label>
-                <input asp-for="UpdateDate" class="form-control" />
-                <span asp-validation-for="UpdateDate" class="text-danger"></span>
-            </div>
+
+            <input type="hidden" asp-for="CreatedBy" />
+            <input type="hidden" asp-for="CreateDate" />
+            <input type="hidden" asp-for="UpdatedBy" />
+            <input type="hidden" asp-for="UpdateDate" />
+
 			<div class="form-group">
 				<input type="submit" value="Kaydet" class="btn btn-sm btn-primary" />
 				<a asp-action="Index" class="btn btn-sm btn-danger">İptal</a>

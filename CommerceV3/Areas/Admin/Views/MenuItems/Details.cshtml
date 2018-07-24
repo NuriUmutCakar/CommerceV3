@@ -1,7 +1,7 @@
 ﻿@model CommerceV3.Models.MenuItem
 
 @{
-    ViewData["Title"] = "Detaylar";
+    ViewData["Title"] = "Menü Öğesi Detaylar";
 }
 
 
@@ -42,7 +42,7 @@
             @Html.DisplayNameFor(model => model.ParentMenuItem)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.ParentMenuItem.Id)
+            @Html.DisplayFor(model => model.ParentMenuItem.Name)
         </dd>
     </dl>
 </div>

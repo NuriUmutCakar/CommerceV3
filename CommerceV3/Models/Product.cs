@@ -24,9 +24,9 @@ namespace CommerceV3.Models
 		public int Quantity { get; set; }
 		[Display(Name = "Stokta Var Mı ?")]
 		public bool IsInStock { get; set; }
-		[Display(Name = "Yayında mı ?")]
+		[Display(Name = "Yayında Mı ?")]
 		public bool IsPublished { get; set; }
-		[Display(Name = "Yeni mi ?")]
+		[Display(Name = "Yeni Mi ?")]
 		public bool IsNew { get; set; }
 		[Display(Name = "Kargo Ücreti(Şehir)")]
 		public decimal ShippingPriceInCityWide { get; set; }

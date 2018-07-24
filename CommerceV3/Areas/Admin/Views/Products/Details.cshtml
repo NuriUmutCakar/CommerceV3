@@ -1,7 +1,7 @@
 ﻿@model CommerceV3.Models.Product
 
 @{
-    ViewData["Title"] = "Detaylar";
+    ViewData["Title"] = "Ürün Detaylar";
 }
 
 	<div>
@@ -83,13 +83,13 @@
             @Html.DisplayNameFor(model => model.Supplier)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Supplier.Id)
+            @Html.DisplayFor(model => model.Supplier.Name)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Brand)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Brand.Id)
+            @Html.DisplayFor(model => model.Brand.Name)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.CreatedBy)

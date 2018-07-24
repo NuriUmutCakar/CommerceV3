@@ -1,7 +1,7 @@
 ﻿@model CommerceV3.Models.MenuItem
 
 @{
-    ViewData["Title"] = "Düzenle";
+    ViewData["Title"] = "Menü Öğesi Düzenle";
 }
 
 
@@ -27,7 +27,7 @@
                 <span asp-validation-for="Target" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <div class="checkbox">
+                <div>
                     <label>
                         <input asp-for="IsPublished" /> @Html.DisplayNameFor(model => model.IsPublished)
                     </label>

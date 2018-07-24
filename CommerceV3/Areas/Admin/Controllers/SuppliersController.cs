@@ -49,8 +49,14 @@ namespace CommerceV3.Areas.Admin.Controllers
         // GET: Admin/Suppliers/Create
         public IActionResult Create()
         {
-            ViewData["RegionId"] = new SelectList(_context.Regions, "Id", "Id");
-            return View();
+            var supplier = new Supplier();
+            supplier.CreatedBy = User.Identity.Name;
+            supplier.CreateDate = DateTime.Now;
+            supplier.UpdatedBy = User.Identity.Name;
+            supplier.UpdateDate = DateTime.Now;
+
+            ViewData["RegionId"] = new SelectList(_context.Regions, "Id", "Name");
+            return View(supplier);
         }
 
         // POST: Admin/Suppliers/Create
@@ -62,11 +68,16 @@ namespace CommerceV3.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                supplier.CreatedBy = User.Identity.Name;
+                supplier.CreateDate = DateTime.Now;
+                supplier.UpdatedBy = User.Identity.Name;
+                supplier.UpdateDate = DateTime.Now;
+
                 _context.Add(supplier);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RegionId"] = new SelectList(_context.Regions, "Id", "Id", supplier.RegionId);
+            ViewData["RegionId"] = new SelectList(_context.Regions, "Id", "Name", supplier.RegionId);
             return View(supplier);
         }
 
@@ -83,7 +94,7 @@ namespace CommerceV3.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["RegionId"] = new SelectList(_context.Regions, "Id", "Id", supplier.RegionId);
+            ViewData["RegionId"] = new SelectList(_context.Regions, "Id", "Name", supplier.RegionId);
             return View(supplier);
         }
 
@@ -103,6 +114,9 @@ namespace CommerceV3.Areas.Admin.Controllers
             {
                 try
                 {
+                    supplier.UpdatedBy = User.Identity.Name;
+                    supplier.UpdateDate = DateTime.Now;
+
                     _context.Update(supplier);
                     await _context.SaveChangesAsync();
                 }
@@ -119,7 +133,7 @@ namespace CommerceV3.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RegionId"] = new SelectList(_context.Regions, "Id", "Id", supplier.RegionId);
+            ViewData["RegionId"] = new SelectList(_context.Regions, "Id", "Name", supplier.RegionId);
             return View(supplier);
         }
 
