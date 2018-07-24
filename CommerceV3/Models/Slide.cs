@@ -9,17 +9,17 @@ namespace CommerceV3.Models
     public class Slide
     {
 		public String Id { get; set; }
-		[Display(Name = "Ad: ")]
+		[Display(Name = "Slayt Adı")]
 		public String Name { get; set; }
-		[Display(Name = "Resim: ")]
+		[Display(Name = "Resim")]
 		public String Image { get; set; }
-		[Display(Name = "Url: ")]
+		[Display(Name = "Bağlantı")]
 		public String Url { get; set; }
-		[Display(Name = "Hedef: ")]
+		[Display(Name = "Hedef")]
 		public String Target { get; set; }
-		[Display(Name = "Yayınlandı mı ?: ")]
+		[Display(Name = "Yayında Mı ?")]
 		public bool IsPublished { get; set; }
-		[Display(Name = "Pozisyon: ")]
+		[Display(Name = "Pozisyon")]
 		public int Position { get; set; }
 	}
 }

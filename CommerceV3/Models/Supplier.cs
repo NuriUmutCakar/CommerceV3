@@ -10,20 +10,21 @@ namespace CommerceV3.Models
     public class Supplier
     {
 		public string Id { get; set; }
-		[Display(Name = "Ad: ")]
+		[Display(Name = "Tedarikçi Adı")]
 		public string Name { get; set; }
-		public string RegionId { get; set; }
-		[Display(Name = "Ana Bölge: ")]
+        [Display(Name = "Bölge")]
+        public string RegionId { get; set; }
+		[Display(Name = "Bölge")]
 		[ForeignKey("RegionId")]
 		public Region Region { get; set; }
 
-		[Display(Name = "Oluşturan: ")]
+		[Display(Name = "Oluşturan Kullanıcı")]
 		public string CreatedBy { get; set; }
-		[Display(Name = "Oluşturulma Tarihi: ")]
+		[Display(Name = "Oluşturulma Tarihi")]
 		public DateTime CreateDate { get; set; }
-		[Display(Name = "Güncelleyen: ")]
+		[Display(Name = "Güncelleyen Kullanıcı")]
 		public string UpdatedBy { get; set; }
-		[Display(Name = "Güncelleme Tarihi: ")]
+		[Display(Name = "Güncelleme Tarihi")]
 		public DateTime UpdateDate { get; set; }
 
 		public virtual ICollection<Product> Products { get; set; }

@@ -10,19 +10,21 @@ namespace CommerceV3.Models
     public class MenuItem
     {
 		public String Id { get; set; }
-		[Display(Name = "Ad: ")]
+		[Display(Name = "Menü Öğesi Adı")]
 		public String Name { get; set; }
-		[Display(Name = "Url: ")]
+		[Display(Name = "Bağlantı")]
 		public String Url { get; set; }
-		[Display(Name = "Hedef: ")]
+		[Display(Name = "Hedef")]
 		public String Target { get; set; }
-		[Display(Name = "Paylaşılsın mı ?: ")]
+		[Display(Name = "Yayında Mı ?")]
 		public bool IsPublished { get; set; }
-		[Display(Name = "Pozisyon: ")]
+		[Display(Name = "Pozisyon")]
 		public int Position { get; set; }
 
-		public string ParentMenuItemId { get; set; }
-		[ForeignKey("ParentMenuItemId")]
+        [Display(Name = "Üst Menü Öğesi")]
+        public string ParentMenuItemId { get; set; }
+        [Display(Name = "Üst Menü Öğesi")]
+        [ForeignKey("ParentMenuItemId")]
 		public MenuItem ParentMenuItem { get; set; }
 		public virtual ICollection<MenuItem> ChildMenuItems { get; set; }
 

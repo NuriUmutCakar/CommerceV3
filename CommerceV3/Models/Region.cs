@@ -10,13 +10,14 @@ namespace CommerceV3.Models
     public class Region
     {
 		public string Id { get; set; }
-		[Display(Name="Ad: ")]
+		[Display(Name="Bölge Adı")]
 		public string Name { get; set; }
-		public RegionType RegionType { get; set; }
-		[Display(Name = "Ad: ")]
+        [Display(Name = "Bölge Türü")]
+        public RegionType RegionType { get; set; }
+		[Display(Name = "Üst Bölge")]
 		public string ParentRegionId { get; set; }
-		[Display(Name = "Ana Bölge: ")]
-		[ForeignKey("ParentRegionId")]
+        [Display(Name = "Üst Bölge")]
+        [ForeignKey("ParentRegionId")]
 		public Region ParentRegion { get; set; }
 
 		public virtual ICollection<Region> ChildRegions { get; set; }
