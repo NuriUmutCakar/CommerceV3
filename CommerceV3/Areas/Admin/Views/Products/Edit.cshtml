@@ -19,7 +19,7 @@
             <div class="form-group">
                 @if (!string.IsNullOrEmpty(Model.Photo))
                 {
-                    <img src="~/Uploads/@Model.Photo" alt="Google Logo" width="150" /><br />
+                    <img src="~/Uploads/@Model.Photo" width="150" /><br />
                 }
                 <label asp-for="Photo" class="control-label"></label>
                 <input asp-for="Photo" type="hidden" />

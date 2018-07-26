@@ -73,7 +73,7 @@ namespace CommerceV3.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Slug,Description,OldPrice,Price,Quantity,IsInStock,IsPublished,IsNew,ShippingPriceInCityWide,ShippingPriceInCountryWide,ShippingPriceInWorldWide,SupplierId,BrandId,CreatedBy,CreateDate,UpdatedBy,UpdateDate")] Product product, IFormFile upload)
+        public async Task<IActionResult> Create([Bind("Id,Name,Slug,Description,OldPrice,Price,Quantity,IsInStock,IsPublished,IsNew,ShippingPriceInCityWide,ShippingPriceInCountryWide,ShippingPriceInWorldWide,SupplierId,BrandId,CreatedBy,CreateDate,UpdatedBy,UpdateDate,Photo")] Product product, IFormFile upload)
         {
             if (ModelState.IsValid)
             {
@@ -133,7 +133,7 @@ namespace CommerceV3.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,Name,Slug,Description,OldPrice,Price,Quantity,IsInStock,IsPublished,IsNew,ShippingPriceInCityWide,ShippingPriceInCountryWide,ShippingPriceInWorldWide,SupplierId,BrandId,CreatedBy,CreateDate,UpdatedBy,UpdateDate")] Product product, IFormFile upload)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,Name,Slug,Description,OldPrice,Price,Quantity,IsInStock,IsPublished,IsNew,ShippingPriceInCityWide,ShippingPriceInCountryWide,ShippingPriceInWorldWide,SupplierId,BrandId,CreatedBy,CreateDate,UpdatedBy,UpdateDate,Photo")] Product product, IFormFile upload)
         {
             if (id != product.Id)
             {
