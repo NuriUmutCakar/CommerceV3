@@ -4,14 +4,16 @@ using CommerceV3.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CommerceV3.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180726092528_addProductFoto")]
+    partial class addProductFoto
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -140,6 +142,8 @@ namespace CommerceV3.Data.Migrations
 
                     b.Property<string>("Description");
 
+                    b.Property<string>("Foto");
+
                     b.Property<bool>("IsInStock");
 
                     b.Property<bool>("IsNew");
@@ -149,9 +153,6 @@ namespace CommerceV3.Data.Migrations
                     b.Property<string>("Name");
 
                     b.Property<decimal>("OldPrice");
-
-                    b.Property<string>("Photo")
-                        .HasMaxLength(200);
 
                     b.Property<decimal>("Price");
 

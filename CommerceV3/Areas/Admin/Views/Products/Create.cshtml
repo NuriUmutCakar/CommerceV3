@@ -8,12 +8,18 @@
 <hr />
 <div class="row">
     <div class="col-md-12">
-        <form asp-action="Create">
+        <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Photo" class="control-label"></label>
+                <input asp-for="Photo" type="hidden" />
+                <input type="file" name="upload" class="form-control" />
+                <span asp-validation-for="Photo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Slug" class="control-label"></label>
@@ -22,7 +28,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
-                <textarea asp-for="Description" class="form-control"></textarea>    
+                <textarea asp-for="Description" class="form-control"></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -78,7 +84,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="SupplierId" class="control-label"></label>
-                <select asp-for="SupplierId" class ="form-control" asp-items="ViewBag.SupplierId">
+                <select asp-for="SupplierId" class="form-control" asp-items="ViewBag.SupplierId">
                     <option value="">Tedarikçi Seçiniz</option>
                 </select>
             </div>
@@ -94,10 +100,10 @@
             <input type="hidden" asp-for="UpdatedBy" />
             <input type="hidden" asp-for="UpdateDate" />
 
-			<div class="form-group">
-				<input type="submit" value="Kaydet" class="btn btn-sm btn-primary" />
-				<a asp-action="Index" class="btn btn-sm btn-danger">İptal</a>
-			</div>
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-sm btn-primary" />
+                <a asp-action="Index" class="btn btn-sm btn-danger">İptal</a>
+            </div>
         </form>
     </div>
 </div>

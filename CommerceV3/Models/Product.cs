@@ -10,8 +10,11 @@ namespace CommerceV3.Models
     public class Product
     {
 		public string Id { get; set; }
-		[Display(Name = "Ürün Adı")]
-		public string Name { get; set; }
+        [StringLength(200)]
+        [Display(Name = "Ürün Fotoğrafı")]
+        public string Photo { get; set; }
+        [Display(Name = "Ürün Adı")]
+        public string Name { get; set; }
 		[Display(Name = "Bağlantı")]
 		public string Slug { get; set; }
 		[Display(Name = "Açıklama")]
