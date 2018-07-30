@@ -7,7 +7,7 @@
     @foreach (var item in (IEnumerable<Slide>)ViewBag.Slides)
     {
         <!-- Slide -->
-        <div class="slide" style="background-image:url('@item.Image');">
+        <div class="slide" style="background-image:url('/Uploads/@item.Image');">
             <div class="container">
                 <div class="slide-captions text-right">
                     <!-- Captions -->
