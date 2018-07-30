@@ -9,15 +9,15 @@ namespace CommerceV3.Models
 {
     public class CartItem
     {
-		public String Id { get; set; }
+		public string Id { get; set; }
         [Display(Name = "Sepet")]
-        public String CartId { get; set; }
+        public string CartId { get; set; }
         [Display(Name = "Sepet")]
         [ForeignKey("CartId")]
 		public Cart Cart { get; set; }
 
         [Display(Name = "Ürün")]
-        public String ProductId { get; set; }
+        public string ProductId { get; set; }
         [Display(Name = "Ürün")]
         [ForeignKey("ProductId")]
 		public Product Product { get; set; }

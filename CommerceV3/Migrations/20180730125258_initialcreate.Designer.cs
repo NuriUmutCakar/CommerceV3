@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace CommerceV3.Data.Migrations
+namespace CommerceV3.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180726101655_addPhotoLen")]
-    partial class addPhotoLen
+    [Migration("20180730125258_initialcreate")]
+    partial class initialcreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -138,9 +138,11 @@ namespace CommerceV3.Data.Migrations
 
                     b.Property<DateTime>("CreateDate");
 
-                    b.Property<string>("CreatedBy");
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(100);
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .HasMaxLength(750);
 
                     b.Property<bool>("IsInStock");
 
@@ -148,7 +150,8 @@ namespace CommerceV3.Data.Migrations
 
                     b.Property<bool>("IsPublished");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasMaxLength(100);
 
                     b.Property<decimal>("OldPrice");
 
@@ -165,13 +168,15 @@ namespace CommerceV3.Data.Migrations
 
                     b.Property<decimal>("ShippingPriceInWorldWide");
 
-                    b.Property<string>("Slug");
+                    b.Property<string>("Slug")
+                        .HasMaxLength(100);
 
                     b.Property<string>("SupplierId");
 
                     b.Property<DateTime>("UpdateDate");
 
-                    b.Property<string>("UpdatedBy");
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(100);
 
                     b.HasKey("Id");
 

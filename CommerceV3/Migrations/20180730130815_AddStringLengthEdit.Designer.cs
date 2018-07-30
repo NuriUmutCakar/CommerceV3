@@ -4,14 +4,16 @@ using CommerceV3.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace CommerceV3.Data.Migrations
+namespace CommerceV3.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180730130815_AddStringLengthEdit")]
+    partial class AddStringLengthEdit
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,9 +26,11 @@ namespace CommerceV3.Data.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Logo");
+                    b.Property<string>("Logo")
+                        .HasMaxLength(200);
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasMaxLength(200);
 
                     b.HasKey("Id");
 
@@ -40,15 +44,18 @@ namespace CommerceV3.Data.Migrations
 
                     b.Property<DateTime>("CreateDate");
 
-                    b.Property<string>("CreatedBy");
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(200);
 
                     b.Property<bool>("IsActive");
 
-                    b.Property<string>("Owner");
+                    b.Property<string>("Owner")
+                        .HasMaxLength(200);
 
                     b.Property<DateTime>("UpdateDate");
 
-                    b.Property<string>("UpdatedBy");
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(200);
 
                     b.HasKey("Id");
 
@@ -80,7 +87,8 @@ namespace CommerceV3.Data.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasMaxLength(200);
 
                     b.HasKey("Id");
 
@@ -92,7 +100,8 @@ namespace CommerceV3.Data.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasMaxLength(200);
 
                     b.HasKey("Id");
 
@@ -108,15 +117,18 @@ namespace CommerceV3.Data.Migrations
 
                     b.Property<string>("MenuId");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasMaxLength(200);
 
                     b.Property<string>("ParentMenuItemId");
 
                     b.Property<int>("Position");
 
-                    b.Property<string>("Target");
+                    b.Property<string>("Target")
+                        .HasMaxLength(200);
 
-                    b.Property<string>("Url");
+                    b.Property<string>("Url")
+                        .HasMaxLength(200);
 
                     b.HasKey("Id");
 
@@ -136,9 +148,11 @@ namespace CommerceV3.Data.Migrations
 
                     b.Property<DateTime>("CreateDate");
 
-                    b.Property<string>("CreatedBy");
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(100);
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .HasMaxLength(750);
 
                     b.Property<bool>("IsInStock");
 
@@ -164,13 +178,15 @@ namespace CommerceV3.Data.Migrations
 
                     b.Property<decimal>("ShippingPriceInWorldWide");
 
-                    b.Property<string>("Slug");
+                    b.Property<string>("Slug")
+                        .HasMaxLength(100);
 
                     b.Property<string>("SupplierId");
 
                     b.Property<DateTime>("UpdateDate");
 
-                    b.Property<string>("UpdatedBy");
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(100);
 
                     b.HasKey("Id");
 
@@ -199,7 +215,8 @@ namespace CommerceV3.Data.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasMaxLength(200);
 
                     b.Property<string>("ParentRegionId");
 
@@ -217,17 +234,21 @@ namespace CommerceV3.Data.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Image");
+                    b.Property<string>("Image")
+                        .HasMaxLength(200);
 
                     b.Property<bool>("IsPublished");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasMaxLength(200);
 
                     b.Property<int>("Position");
 
-                    b.Property<string>("Target");
+                    b.Property<string>("Target")
+                        .HasMaxLength(200);
 
-                    b.Property<string>("Url");
+                    b.Property<string>("Url")
+                        .HasMaxLength(200);
 
                     b.HasKey("Id");
 
@@ -241,15 +262,18 @@ namespace CommerceV3.Data.Migrations
 
                     b.Property<DateTime>("CreateDate");
 
-                    b.Property<string>("CreatedBy");
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(200);
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasMaxLength(200);
 
                     b.Property<string>("RegionId");
 
                     b.Property<DateTime>("UpdateDate");
 
-                    b.Property<string>("UpdatedBy");
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(200);
 
                     b.HasKey("Id");
 

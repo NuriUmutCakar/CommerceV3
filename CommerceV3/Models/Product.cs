@@ -53,7 +53,11 @@ namespace CommerceV3.Models
         [ForeignKey("BrandId")]
 		public Brand Brand { get; set; }
 
-		public virtual ICollection<ProductCategory> ProductCategories { get; set; }
+        [Display(Name = "Kategori")]
+        public string CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
+        [Display(Name = "Kategori")]
+        public Category Category { get; set; }
 
         [StringLength(100)]
         [Display(Name = "Oluşturan Kullanıcı")]

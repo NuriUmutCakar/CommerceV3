@@ -46,10 +46,9 @@
 
         <!--Product list-->
         <div class="shop">
-            @foreach(var item in (IEnumerable<Product>)ViewBag.Products)
-            {
-
-                <div class="row">
+            <div class="row">
+                @foreach (var item in (IEnumerable<Product>)ViewBag.Products)
+                {
                     <div class="col-md-3">
                         <div class="product">
                             <div class="product-image">
@@ -69,7 +68,7 @@
                             </div>
 
                             <div class="product-description">
-                                <div class="product-category">Women</div>
+                                <div class="product-category">@item.Category?.Name</div>
                                 <div class="product-title">
                                     <h3><a href="#">@item.Name</a></h3>
                                 </div>
@@ -79,9 +78,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-            }
+                }
+            </div>
         </div>
     </div>
 </section>

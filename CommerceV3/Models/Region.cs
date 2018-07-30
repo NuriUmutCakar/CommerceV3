@@ -10,7 +10,8 @@ namespace CommerceV3.Models
     public class Region
     {
 		public string Id { get; set; }
-		[Display(Name="Bölge Adı")]
+        [StringLength(200)]
+        [Display(Name="Bölge Adı")]
 		public string Name { get; set; }
         [Display(Name = "Bölge Türü")]
         public RegionType RegionType { get; set; }

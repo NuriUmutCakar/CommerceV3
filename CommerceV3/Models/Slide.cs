@@ -8,15 +8,19 @@ namespace CommerceV3.Models
 {
     public class Slide
     {
-		public String Id { get; set; }
-		[Display(Name = "Slayt Adı")]
-		public String Name { get; set; }
-		[Display(Name = "Resim")]
-		public String Image { get; set; }
-		[Display(Name = "Bağlantı")]
-		public String Url { get; set; }
-		[Display(Name = "Hedef")]
-		public String Target { get; set; }
+		public string Id { get; set; }
+        [StringLength(200)]
+        [Display(Name = "Slayt Adı")]
+		public string Name { get; set; }
+        [StringLength(200)]
+        [Display(Name = "Resim")]
+		public string Image { get; set; }
+        [StringLength(200)]
+        [Display(Name = "Bağlantı")]
+		public string Url { get; set; }
+        [StringLength(200)]
+        [Display(Name = "Hedef")]
+		public string Target { get; set; }
 		[Display(Name = "Yayında Mı ?")]
 		public bool IsPublished { get; set; }
 		[Display(Name = "Pozisyon")]
