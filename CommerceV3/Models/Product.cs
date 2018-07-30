@@ -13,11 +13,14 @@ namespace CommerceV3.Models
         [StringLength(200)]
         [Display(Name = "Ürün Fotoğrafı")]
         public string Photo { get; set; }
+        [StringLength(100)]
         [Display(Name = "Ürün Adı")]
         public string Name { get; set; }
-		[Display(Name = "Bağlantı")]
+        [StringLength(100)]
+        [Display(Name = "Bağlantı")]
 		public string Slug { get; set; }
-		[Display(Name = "Açıklama")]
+        [StringLength(750)]
+        [Display(Name = "Açıklama")]
 		public string Description { get; set; }
 		[Display(Name = "Eski Fiyatı")]
 		public decimal OldPrice { get; set; }
@@ -52,11 +55,13 @@ namespace CommerceV3.Models
 
 		public virtual ICollection<ProductCategory> ProductCategories { get; set; }
 
-		[Display(Name = "Oluşturan Kullanıcı")]
+        [StringLength(100)]
+        [Display(Name = "Oluşturan Kullanıcı")]
 		public string CreatedBy { get; set; }
 		[Display(Name = "Oluşturulma Tarihi")]
 		public DateTime CreateDate { get; set; }
-		[Display(Name = "Güncelleyen Kullanıcı")]
+        [StringLength(100)]
+        [Display(Name = "Güncelleyen Kullanıcı")]
 		public string UpdatedBy { get; set; }
 		[Display(Name = "Güncellenme Tarihi")]
 		public DateTime UpdateDate { get; set; }
